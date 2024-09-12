@@ -11,11 +11,14 @@ public class EmailRegex {
 
     Email UC1:
     Validate the mandatory part and start with abc.
+
+    Email UC2:
+    Ensure @ and validate the mandatory 2nd part i.e. bridgelabz
     * */
 
     // Regex pattern to validate the 'abc' part
     // *: Allows any characters to follow after the mandatory abc part.
-    private static final String EMAIL_PATTERN = "^[a-z]{3}.*$";
+    private static final String EMAIL_PATTERN = "^[a-z]{3}\\.?[a-z]*@[a-z]{10}.*$";
 
     // Method to validate the email
     public static boolean validateEmail(String email) {
@@ -28,9 +31,9 @@ public class EmailRegex {
         String emailToValidate = "abc.xyz@bridgelabz.co.in";
         // Validate the email
         if (validateEmail(emailToValidate)) {
-            System.out.println(emailToValidate + " has a valid start (abc).");
+            System.out.println(emailToValidate + " has a valid structure with 'abc' and 'bridgelabz'.");
         } else {
-            System.out.println(emailToValidate + " does not have a valid start (abc).");
+            System.out.println(emailToValidate + " does not have a valid structure.");
         }
     }
 }
