@@ -14,11 +14,14 @@ public class EmailRegex {
 
     Email UC2:
     Ensure @ and validate the mandatory 2nd part i.e. bridgelabz
+
+    Email UC3:
+    Ensure “.” after bridgelabz and validate the mandatory 3rd part i.e. co
     * */
 
     // Regex pattern to validate the 'abc' part
     // *: Allows any characters to follow after the mandatory abc part.
-    private static final String EMAIL_PATTERN = "^[a-z]{3}\\.?[a-z]*@[a-z]{10}.*$";
+    private static final String EMAIL_PATTERN = "^[a-z]{3}\\.?[a-z]*@[a-z]{10}\\.[a-z]{2}.*$";
 
     // Method to validate the email
     public static boolean validateEmail(String email) {
